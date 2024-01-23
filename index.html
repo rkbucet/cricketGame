@@ -12,35 +12,17 @@
             min-height: 70px;
             border-radius: 50px;
             border: 3px solid black ;
-            
         }
         button:hover {
             background-color: rgb(221, 230, 98);
             transition-duration: 1s;
           }
       </style>
-    
 </head>
-    
     <h1>Bat Ball or Stump?</h1>
     <h2 id="matchResult">Result</h2>
     <button onclick="
-    let randomChoice = Math.random()*3;
-    /*if (randomChoice > 0 && randomChoice < 1){
-        computerChoice = 'Ball'
-    } else if (randomChoice > 1 && randomChoice < 2){
-        computerChoice = 'Bat'
-    } else if ( randomChoice > 2) {
-        computerChoice = 'Stump'
-    } */
-
-    if (randomChoice < 1){
-        computerChoice = 'Ball'
-    } else if ( randomChoice < 2){
-        computerChoice = 'Bat'
-    } else {
-        computerChoice = 'Stump'
-    }
+    computerPicks()
     let result;
     if (computerChoice === 'Ball'){
         result = 'You won'
@@ -52,22 +34,7 @@
     alert(` You choose Bat, computer choose ${computerChoice} and ${result}`)
     ">Bat</button>
     <button onclick="
-    randomChoice = Math.random()*3;
-    /*if (randomChoice > 0 && randomChoice < 1){
-        computerChoice = 'Ball'
-    } else if (randomChoice > 1 && randomChoice < 2){
-        computerChoice = 'Bat'
-    } else if ( randomChoice > 2) {
-        computerChoice = 'Stump'
-    }*/
-    if (randomChoice < 1){
-        computerChoice = 'Ball'
-    } else if ( randomChoice < 2){
-        computerChoice = 'Bat'
-    } else {
-        computerChoice = 'Stump'
-    }
-
+    computerPicks()
     if (computerChoice === 'Ball'){
         result = 'Its Tie'
     } else if ( computerChoice === 'Stump'){
@@ -78,22 +45,7 @@
     alert(` You choose Ball, computer choose ${computerChoice} and ${result}`)
     ">Ball</button>
     <button onclick="
-    randomChoice = Math.random()*3;
-    /*if (randomChoice > 0 && randomChoice < 1){
-        computerChoice = 'Ball'
-    } else if (randomChoice > 1 && randomChoice < 2){
-        computerChoice = 'Bat'
-    } else if ( randomChoice > 2) {
-        computerChoice = 'Stump'
-    }*/
-    if (randomChoice < 1){
-        computerChoice = 'Ball'
-    } else if (randomChoice < 2){
-        computerChoice = 'Bat'
-    } else {
-        computerChoice = 'Stump'
-    }
-    
+    computerPicks()
     if (computerChoice === 'Ball'){
         result = 'You Lose'
     } else if ( computerChoice === 'Stump'){
@@ -106,4 +58,22 @@
     ">Stump</button>
     
 </body>
+<script>
+    function computerPicks(){
+        let randomChoice = Math.random()*3;
+        /*if (randomChoice > 0 && randomChoice < 1){
+            computerChoice = 'Ball'
+        } else if (randomChoice > 1 && randomChoice < 2){
+            computerChoice = 'Bat'
+        } else if ( randomChoice > 2) {
+            computerChoice = 'Stump'
+        } */
+        if (randomChoice < 1){
+            computerChoice = 'Ball'
+        } else if ( randomChoice < 2){
+            computerChoice = 'Bat'
+        } else {
+            computerChoice = 'Stump'
+    }}
+</script>
 </html>
