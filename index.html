@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bat Ball Stump</title>
+    <style>
+        body {
+          text-align: center;
+        }
+        button {
+            background-color: rgb(198, 31, 53);
+            min-width: 70px;
+            min-height: 70px;
+            border-radius: 50px;
+            border: 3px solid black ;
+            
+        }
+        button:hover {
+            background-color: rgb(221, 230, 98);
+            transition-duration: 1s;
+          }
+      </style>
+    
+</head>
+    
+    <h1>Bat Ball or Stump?</h1>
+    <h2 id="matchResult">Result</h2>
+    <button onclick="
+    let randomChoice = Math.random()*3;
+    if (randomChoice > 0 && randomChoice < 1){
+        computerChoice = 'Ball'
+    } else if (randomChoice > 1 && randomChoice < 2){
+        computerChoice = 'Bat'
+    } else if ( randomChoice > 2) {
+        computerChoice = 'Stump'
+    }
+    let result;
+    if (computerChoice === 'Ball'){
+        result = 'You won'
+    } else if ( computerChoice === 'Stump'){
+        result = 'You Lose'
+    } else {
+        result = 'Its Tie'
+    }
+    alert(` You choose Bat, computer choose ${computerChoice} and ${result}`)
+    ">Bat</button>
+    <button onclick="
+    randomChoice = Math.random()*3;
+    if (randomChoice > 0 && randomChoice < 1){
+        computerChoice = 'Ball'
+    } else if (randomChoice > 1 && randomChoice < 2){
+        computerChoice = 'Bat'
+    } else if ( randomChoice > 2) {
+        computerChoice = 'Stump'
+    }
+
+    if (computerChoice === 'Ball'){
+        result = 'Its Tie'
+    } else if ( computerChoice === 'Stump'){
+        result = 'You Won'
+    } else {
+        result = 'You Lose'
+    }
+    alert(` You choose Ball, computer choose ${computerChoice} and ${result}`)
+    ">Ball</button>
+    <button onclick="
+    randomChoice = Math.random()*3;
+    if (randomChoice > 0 && randomChoice < 1){
+        computerChoice = 'Ball'
+    } else if (randomChoice > 1 && randomChoice < 2){
+        computerChoice = 'Bat'
+    } else if ( randomChoice > 2) {
+        computerChoice = 'Stump'
+    }
+    
+    if (computerChoice === 'Ball'){
+        result = 'You Lose'
+    } else if ( computerChoice === 'Stump'){
+        result = 'Its Tie'
+    } else {
+        result = 'You Won!'
+    }
+    //document.querySelectorById('#matchResult').value = `You choose Stump, computer choose ${computerChoice} and ${result}`
+    alert(` You choose Stump, computer choose ${computerChoice} and ${result}`)
+    ">Stump</button>
+    
+</body>
+</html>
