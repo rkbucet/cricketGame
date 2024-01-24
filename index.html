@@ -20,54 +20,28 @@
       </style>
 </head>
     <h1>Bat Ball or Stump?</h1>
-    <h2 id="matchResult">Result</h2>
+
     <button onclick="
-    let computerChoice = computerPicks()
-    let result;
-    if (computerChoice === 'Ball'){
-        result = 'You won'
-    } else if ( computerChoice === 'Stump'){
-        result = 'You Lose'
-    } else {
-        result = 'Its Tie'
-    }
-    alert(` You choose Bat, computer choose ${computerChoice} and ${result}`)
+    computerChoice = computerPicks()
+    result = gameResult(computerChoice, 'Bat')
+    msg = gameMsg('Bat', computerChoice, result)
     ">Bat</button>
+
     <button onclick="
     computerChoice = computerPicks()
-    if (computerChoice === 'Ball'){
-        result = 'Its Tie'
-    } else if ( computerChoice === 'Stump'){
-        result = 'You Won'
-    } else {
-        result = 'You Lose'
-    }
-    alert(` You choose Ball, computer choose ${computerChoice} and ${result}`)
+    result = gameResult(computerChoice, 'Ball')
+    msg = gameMsg('Ball', computerChoice, result)
     ">Ball</button>
+
     <button onclick="
     computerChoice = computerPicks()
-    if (computerChoice === 'Ball'){
-        result = 'You Lose'
-    } else if ( computerChoice === 'Stump'){
-        result = 'Its Tie'
-    } else {
-        result = 'You Won!'
-    }
-    //document.querySelectorById('#matchResult').value = `HELLO`
-    alert(` You choose Stump, computer choose ${computerChoice} and ${result}`)
+    result = gameResult(computerChoice, 'Stump')
+    msg = gameMsg('Stump', computerChoice, result)
     ">Stump</button>
-    
 </body>
 <script>
     function computerPicks(){
-        let randomChoice = Math.random()*3;
-        /*if (randomChoice > 0 && randomChoice < 1){
-            computerChoice = 'Ball'
-        } else if (randomChoice > 1 && randomChoice < 2){
-            computerChoice = 'Bat'
-        } else if ( randomChoice > 2) {
-            computerChoice = 'Stump'
-        } */
+        let randomChoice = Math.random()*3; 
         if (randomChoice < 1){
             return 'Ball'
         } else if ( randomChoice < 2){
@@ -75,5 +49,38 @@
         } else {
             return 'Stump'
     }}
+
+    function gameResult(computerChoice, userChoice){
+        if (userChoice = 'Bat'){
+            if (computerChoice === 'Ball'){
+                return 'You won'
+            } else if ( computerChoice === 'Stump'){
+                return 'You Lose'
+            } else {
+                return 'Its Tie'
+            }
+        }
+        else if (userChoice = 'Ball'){
+            if (computerChoice === 'Ball'){
+                result = 'Its Tie'
+            } else if ( computerChoice === 'Stump'){
+                result = 'You Won'
+            } else {
+                result = 'You Lose'
+            }
+        }
+        else { if (computerChoice === 'Ball'){
+            result = 'You Lose'
+            } else if ( computerChoice === 'Stump'){
+                result = 'Its Tie'
+            } else {
+                result = 'You Won!'
+            }
+        }
+    }
+
+    function gameMsg(yourChoice, computerChoice, result){
+        return alert(` You choose ${yourChoice}, computer choose ${computerChoice} and ${result}`)
+    }
 </script>
 </html>
