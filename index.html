@@ -22,7 +22,7 @@
     <h1>Bat Ball or Stump?</h1>
     <h2 id="matchResult">Result</h2>
     <button onclick="
-    computerPicks()
+    let computerChoice = computerPicks()
     let result;
     if (computerChoice === 'Ball'){
         result = 'You won'
@@ -34,7 +34,7 @@
     alert(` You choose Bat, computer choose ${computerChoice} and ${result}`)
     ">Bat</button>
     <button onclick="
-    computerPicks()
+    computerChoice = computerPicks()
     if (computerChoice === 'Ball'){
         result = 'Its Tie'
     } else if ( computerChoice === 'Stump'){
@@ -45,7 +45,7 @@
     alert(` You choose Ball, computer choose ${computerChoice} and ${result}`)
     ">Ball</button>
     <button onclick="
-    computerPicks()
+    computerChoice = computerPicks()
     if (computerChoice === 'Ball'){
         result = 'You Lose'
     } else if ( computerChoice === 'Stump'){
@@ -69,11 +69,11 @@
             computerChoice = 'Stump'
         } */
         if (randomChoice < 1){
-            computerChoice = 'Ball'
+            return 'Ball'
         } else if ( randomChoice < 2){
-            computerChoice = 'Bat'
+            return 'Bat'
         } else {
-            computerChoice = 'Stump'
+            return 'Stump'
     }}
 </script>
 </html>
