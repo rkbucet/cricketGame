@@ -40,6 +40,11 @@
     ">Stump</button>
 </body>
 <script>
+    let score = {
+        win:0,
+        lost:0,
+        tie:0,
+    };
     function computerPicks(){
         let randomChoice = Math.random()*3; 
         if (randomChoice < 1){
@@ -53,34 +58,51 @@
     function gameResult(computerChoice, userChoice){
         if (userChoice = 'Bat'){
             if (computerChoice === 'Ball'){
+                score.win++;
                 return 'You won'
             } else if ( computerChoice === 'Stump'){
+                score.lost++;
                 return 'You Lose'
             } else {
+                score.tie++;
                 return 'Its Tie'
             }
         }
         else if (userChoice = 'Ball'){
             if (computerChoice === 'Ball'){
-                result = 'Its Tie'
+                score.tie++;
+                return 'Its Tie'
             } else if ( computerChoice === 'Stump'){
-                result = 'You Won'
+                score.win++;
+                return 'You Won'
             } else {
-                result = 'You Lose'
+                score.lost++;
+                return 'You Lose'
             }
         }
         else { if (computerChoice === 'Ball'){
-            result = 'You Lose'
+                score.lost++;
+                return 'You Lose'
             } else if ( computerChoice === 'Stump'){
-                result = 'Its Tie'
+                score.tie++;
+                return 'Its Tie'
             } else {
-                result = 'You Won!'
+                score.win++;
+                return 'You Won!'
             }
         }
     }
 
     function gameMsg(yourChoice, computerChoice, result){
-        return alert(` You choose ${yourChoice}, computer choose ${computerChoice} and ${result}`)
-    }
+        console.log(result)
+        alert(`You choose ${yourChoice}, computer choose ${computerChoice}
+        
+        ${result}
+        
+        Score - 
+                won: ${score.win}, 
+                Lose: ${score.lost}, 
+                Tie: ${score.tie}`)
+        }
 </script>
 </html>
